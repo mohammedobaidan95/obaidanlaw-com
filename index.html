@@ -282,13 +282,13 @@
   /* ======================================================================
      SECTION BASE
      ====================================================================== */
-  .section { padding: 7rem 2rem; max-width: 1600px; margin: 0 auto; }
+  .section { padding: 4.5rem 2rem; max-width: 1600px; margin: 0 auto; }
   .section-lead {
     display: grid; grid-template-columns: 1fr 2fr;
-    gap: 4rem; margin-bottom: 5rem; align-items: end;
+    gap: 4rem; margin-bottom: 3rem; align-items: end;
   }
   @media (max-width: 900px) {
-    .section { padding: 5rem 2rem; }
+    .section { padding: 3.5rem 2rem; }
     .section-lead { grid-template-columns: 1fr; gap: 1.5rem; }
   }
   .section-lead .eyebrow { margin-bottom: 1rem; }
@@ -390,8 +390,9 @@
   /* Team grid */
   .team-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-    margin-top: 4rem;
   }
+  /* Homepage uses .section-lead above the grid; preserve breathing room there */
+  .section-lead + .team-grid { margin-top: 4rem; }
   @media (max-width: 1000px) { .team-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
   .team-card { cursor: pointer; }
@@ -422,12 +423,12 @@
   /* Footer */
   footer {
     background: var(--dark); color: white;
-    padding: 6rem 2rem 2rem;
+    padding: 4rem 2rem 1.5rem;
   }
   .footer-inner { max-width: 1600px; margin: 0 auto; }
   .footer-top {
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem;
-    padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.12);
   }
   @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
   @media (max-width: 600px) { .footer-top { grid-template-columns: 1fr; gap: 2.5rem; } }
@@ -449,7 +450,7 @@
   }
   .footer-col a:hover { color: white; }
   .footer-bottom {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     font-size: 0.72rem; color: rgba(255,255,255,0.4);
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
   }
@@ -458,18 +459,22 @@
   .page { display: none; }
   .page.active { display: block; }
 
-  /* Inner page banner */
-  .page-banner {
-    position: relative; min-height: 35vh;
-    background-size: cover; background-position: center;
-    display: flex; align-items: flex-end; color: white;
-  }
+  /* ──────────────────────────────────────────────────────────────
+     PAGE BANNERS — Editorial Minimal + Split Image
+     ──────────────────────────────────────────────────────────────
+     Two variants:
+       .page-header-plain — Editorial Minimal (the existing site style)
+       .page-banner-split — text on white left, full-bleed image right
+  */
 
-  /* Plain page header (no banner image) */
+  /* EDITORIAL MINIMAL (existing site style, slightly refined) ─── */
   .page-header-plain {
     max-width: 1600px; margin: 0 auto;
-    padding: 7rem 2rem 3rem;
+    padding: 4rem 2rem 2.25rem;
     border-bottom: 1px solid var(--border);
+  }
+  .page-header-plain .page-header-inner {
+    display: flex; flex-direction: column;
   }
   .page-header-plain .page-header-inner .eyebrow {
     margin-bottom: 1.25rem;
@@ -480,13 +485,71 @@
     line-height: 1;
     letter-spacing: -0.02em;
   }
+
+  /* SPLIT IMAGE — text left on white, image right ─────────────── */
+  .page-banner-split {
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: stretch;
+    min-height: 260px;
+  }
+  .page-banner-split .split-copy {
+    padding: 3rem 2rem 2.25rem 2rem;
+    max-width: 920px; margin-left: auto;
+    width: 100%;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .page-banner-split .split-copy-inner {
+    max-width: 720px;
+  }
+  .page-banner-split .eyebrow {
+    margin-bottom: 1rem;
+  }
+  .page-banner-split h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+  .page-banner-split .split-image {
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a1a;
+    min-height: 260px;
+  }
+  @media (max-width: 900px) {
+    .page-banner-split {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .page-banner-split .split-copy {
+      padding: 2.5rem 2rem 2rem 2rem;
+    }
+    .page-banner-split .split-image {
+      min-height: 220px;
+    }
+  }
+
+  /* LEGACY full-bleed banner (kept for insight articles) ──────── */
+  .page-banner {
+    position: relative;
+    min-height: 44vh;
+    background-size: cover; background-position: center;
+    display: flex; align-items: flex-end; color: white;
+    overflow: hidden;
+  }
   .page-banner::before {
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0) 100%);
+    background:
+      linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.05) 100%),
+      linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 50%);
   }
-  /* Stronger overlay for insight-article banners (bright exterior photography needs more contrast) */
   .page[id^="page-insight-"] .page-banner::before {
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.3) 100%);
+    background:
+      linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.25) 100%),
+      linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%);
   }
   .page-banner-inner {
     position: relative; z-index: 2;
@@ -494,7 +557,7 @@
     padding: 4rem 2rem;
   }
   .page-banner .eyebrow {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     margin-bottom: 1.25rem;
   }
   .page-banner h1 {
@@ -506,12 +569,12 @@
 
   .intro-block {
     max-width: 1600px; margin: 0 auto;
-    padding: 6rem 2rem 2rem;
+    padding: 3rem 2rem 1.5rem;
   }
-  .intro-block + .section { padding-top: 3rem; }
+  .intro-block + .section { padding-top: 2rem; }
   /* Tighten gap when two .section blocks stack directly (no image band between) */
-  section.section:has(+ section.section) { padding-bottom: 3rem; }
-  section.section + section.section { padding-top: 3rem; }
+  section.section:has(+ section.section) { padding-bottom: 2rem; }
+  section.section + section.section { padding-top: 2rem; }
   .intro-block p {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -552,10 +615,10 @@
   .info-block a { border-bottom: 1px solid var(--border); }
 
   /* Matters list */
-  .matters-list { border-top: 1px solid var(--border); margin-top: 3rem; }
+  .matters-list { border-top: 1px solid var(--border); margin-top: 1rem; }
   .matters-list .matter-row {
     display: grid; grid-template-columns: 200px 1fr;
-    gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--border);
+    gap: 3rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border);
   }
   @media (max-width: 800px) {
     .matters-list .matter-row { grid-template-columns: 1fr; gap: 1rem; }
@@ -574,7 +637,7 @@
   }
 
   /* Clients strip */
-  .clients { max-width: 1600px; margin: 0 auto; padding: 5rem 2rem 7rem; }
+  .clients { max-width: 1600px; margin: 0 auto; padding: 3rem 2rem 4.5rem; }
   .clients-grid {
     display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
     background: var(--border); border: 1px solid var(--border);
@@ -738,9 +801,9 @@
     <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
     <div class="hero-inner">
       <p class="hero-eyebrow">Established Counsel · Doha</p>
-      <h1 class="serif">Qatar's boutique law firm for corporate, real estate, and commercial matters.</h1>
+      <h1 class="serif">A Qatari law firm for corporate, real estate, and commercial matters.</h1>
       <p class="subhead serif">Precision in counsel. Clarity in drafting. Resolve in advocacy.</p>
-      <p class="lead">A Qatari boutique practice providing structured legal advice to businesses, institutions, and individuals across QFC and mainland jurisdictions, in Arabic and English.</p>
+      <p class="lead">A Qatari practice providing structured legal advice to businesses, institutions, and individuals across QFC and mainland jurisdictions, in Arabic and English.</p>
       <div>
         <a class="btn" onclick="go('contact')">Book consultation <span class="arrow">→</span></a>
       </div>
@@ -751,8 +814,8 @@
     <div class="split-image" style="background-image: url('images/workstation_painting.jpg');"></div>
     <div class="split-text">
       <p class="eyebrow">The Firm</p>
-      <h2 class="serif">A boutique practice, built on Qatari ground.</h2>
-      <p>Al Obaidan Law Firm is a boutique practice founded in Doha. Our work is grounded in Qatari commercial practice and shaped by a decade of in-house counsel experience with a Qatari state entity.</p>
+      <h2 class="serif">A practice built on Qatari ground.</h2>
+      <p>Al Obaidan Law Firm is a practice founded in Doha. Our work is grounded in Qatari commercial practice and shaped by a decade of in-house counsel experience with a Qatari state entity.</p>
       <p>Every engagement is led by senior lawyers who take ownership of outcomes. We draft with clarity, advocate with discipline, and protect our clients' interests with care.</p>
       <a class="link" onclick="go('about')">Our approach <span>→</span></a>
     </div>
@@ -794,7 +857,7 @@
     </div>
   </section>
 
-  <div class="image-band" style="background-image: url('images/skyline_panoramic.jpg');"></div>
+  <div class="image-band-small" style="background-image: url('images/office_conference_view.jpg');"></div>
 
   <section class="section">
     <div class="section-lead">
@@ -823,41 +886,6 @@
     </div>
     <div style="margin-top: 4rem; text-align: center;">
       <a class="btn btn-dark" onclick="go('portfolio')">All matters <span class="arrow">→</span></a>
-    </div>
-  </section>
-
-  <div class="image-band-small" style="background-image: url('images/reception_bench_wide.jpg');"></div>
-
-  <section class="section">
-    <div class="section-lead">
-      <div>
-        <p class="eyebrow">Perspectives</p>
-        <h2 class="serif">Insights</h2>
-      </div>
-      <p>Short notes on recent Qatari judgments and legal developments, written for clients who prefer clarity over commentary.</p>
-    </div>
-    <div class="insights-grid">
-      <article class="insight" onclick="go('insight-cassation-jurisdiction')">
-        <div class="thumb" style="background-image: url('images/insight_msheireb_tower.jpg');"></div>
-        <div class="meta">April 19, 2026 · Real Estate</div>
-        <h3 class="serif">When Does the Real Estate Development Committee Have Jurisdiction?</h3>
-        <p>A recent Court of Cassation decision draws a clear line between the specialised Committee and the ordinary commercial courts.</p>
-      </article>
-      <article class="insight" onclick="go('insight-actual-tenant')">
-        <div class="thumb" style="background-image: url('images/insight_mina_district.jpg');"></div>
-        <div class="meta">April 18, 2026 · Real Estate</div>
-        <h3 class="serif">Recovery from the Actual Tenant</h3>
-        <p>A final Civil Court of First Instance decision on when a signed acknowledgment establishes the true identity of a tenant under a commercial lease.</p>
-      </article>
-      <article class="insight" onclick="go('insight-partial-steps')">
-        <div class="thumb" style="background-image: url('images/insight_crescent_tower.jpg');"></div>
-        <div class="meta">April 12, 2026 · Dispute Resolution</div>
-        <h3 class="serif">Partial Steps Do Not Discharge a Contract</h3>
-        <p>A final Investment and Trade Court ruling confirms that obtaining a commercial registration alone does not amount to performance.</p>
-      </article>
-    </div>
-    <div style="margin-top: 4rem; text-align: center;">
-      <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
     </div>
   </section>
 
@@ -898,18 +926,54 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="section-lead">
+      <div>
+        <p class="eyebrow">Perspectives</p>
+        <h2 class="serif">Insights</h2>
+      </div>
+      <p>Short notes on recent Qatari judgments and legal developments, written for clients who prefer clarity over commentary.</p>
+    </div>
+    <div class="insights-grid">
+      <article class="insight" onclick="go('insight-cassation-jurisdiction')">
+        <div class="thumb" style="background-image: url('images/insight_msheireb_tower.jpg');"></div>
+        <div class="meta">April 19, 2026 · Real Estate</div>
+        <h3 class="serif">When Does the Real Estate Development Committee Have Jurisdiction?</h3>
+        <p>A recent Court of Cassation decision draws a clear line between the specialised Committee and the ordinary commercial courts.</p>
+      </article>
+      <article class="insight" onclick="go('insight-actual-tenant')">
+        <div class="thumb" style="background-image: url('images/insight_mina_district.jpg');"></div>
+        <div class="meta">April 18, 2026 · Real Estate</div>
+        <h3 class="serif">Recovery from the Actual Tenant</h3>
+        <p>A final Civil Court of First Instance decision on when a signed acknowledgment establishes the true identity of a tenant under a commercial lease.</p>
+      </article>
+      <article class="insight" onclick="go('insight-partial-steps')">
+        <div class="thumb" style="background-image: url('images/insight_crescent_tower.jpg');"></div>
+        <div class="meta">April 12, 2026 · Dispute Resolution</div>
+        <h3 class="serif">Partial Steps Do Not Discharge a Contract</h3>
+        <p>A final Investment and Trade Court ruling confirms that obtaining a commercial registration alone does not amount to performance.</p>
+      </article>
+    </div>
+    <div style="margin-top: 4rem; text-align: center;">
+      <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
+    </div>
+  </section>
+
 </div>
 
 <!-- ABOUT -->
 <div class="page" id="page-about">
-  <div class="page-header-plain">
-    <div class="page-header-inner">
-      <p class="eyebrow">The Firm</p>
-      <h1 class="serif">About</h1>
+  <div class="page-banner-split">
+    <div class="split-copy">
+      <div class="split-copy-inner">
+        <p class="eyebrow">The Firm</p>
+        <h1 class="serif">About</h1>
+      </div>
     </div>
+    <div class="split-image" style="background-image: url('images/office_bench_painting.jpg');"></div>
   </div>
   <div class="intro-block">
-    <p class="serif">Al Obaidan Law Firm is a boutique practice founded in Doha, grounded in Qatari commercial life and shaped by a decade of in-house counsel experience at a Qatari state entity.</p>
+    <p class="serif">Al Obaidan Law Firm is a practice founded in Doha, grounded in Qatari commercial life and shaped by a decade of in-house counsel experience at a Qatari state entity.</p>
   </div>
   <section class="section">
     <div class="section-lead">
@@ -917,7 +981,7 @@
         <p class="eyebrow">Our approach</p>
         <h2 class="serif">How we work</h2>
       </div>
-      <p>Professionalism, responsiveness, and legal integrity. Our boutique size allows for personal attention, clear communication, and fast turnaround.</p>
+      <p>Professionalism, responsiveness, and legal integrity. Our size allows for personal attention, clear communication, and fast turnaround.</p>
     </div>
     <div class="matters-grid">
       <article class="matter">
@@ -942,16 +1006,19 @@
       </article>
     </div>
   </section>
-  <div class="image-band" style="background-image: url('images/doha_katara_view.jpg');"></div>
+  <div class="image-band" style="background-image: url('images/architecture_facade_triangles.jpg');"></div>
 </div>
 
 <!-- EXPERTISE -->
 <div class="page" id="page-expertise">
-  <div class="page-header-plain">
-    <div class="page-header-inner">
-      <p class="eyebrow">What we do</p>
-      <h1 class="serif">Expertise</h1>
+  <div class="page-banner-split">
+    <div class="split-copy">
+      <div class="split-copy-inner">
+        <p class="eyebrow">What we do</p>
+        <h1 class="serif">Expertise</h1>
+      </div>
     </div>
+    <div class="split-image" style="background-image: url('images/practice_doha_skyline.jpg');"></div>
   </div>
   <div class="intro-block">
     <p class="serif">Core practice coverage, structured and tailored to the matter at hand.</p>
@@ -971,8 +1038,8 @@
 
 <!-- PORTFOLIO -->
 <div class="page" id="page-portfolio">
-  <div class="page-banner" style="background-image: url('images/skyline_panoramic.jpg');">
-    <div class="page-banner-inner">
+  <div class="page-header-plain">
+    <div class="page-header-inner">
       <p class="eyebrow">Representative Matters</p>
       <h1 class="serif">Experience</h1>
     </div>
@@ -980,7 +1047,7 @@
   <div class="intro-block">
     <p class="serif">A selection of matters and clients we have advised across industries.</p>
   </div>
-  <section class="section" style="padding-top: 2rem;">
+  <section class="section" style="padding-top: 1rem; padding-bottom: 2rem;">
     <div class="matters-list">
       <div class="matter-row"><div><div class="tag">Corporate · QFC</div></div><div><h3 class="serif">QFC Family Holding Company — Articles of Association</h3><p>Advised a Qatari family on bespoke Articles of Association for a QFC-registered investment holding company. Work covered reserved matters drafting, share transfer and pre-emption rights, dispute resolution before the QICDRC, and reconciliation of the AoA with the family's governing charter.</p></div></div>
       <div class="matter-row"><div><div class="tag">Dispute Resolution</div></div><div><h3 class="serif">Investment Dispute — Full Recovery and Damages</h3><p>Represented an investor before the Investment and Trade Court in a claim to rescind an investment agreement in a commercial venture. Obtained a final judgment ordering full refund of the client's invested capital together with compensation for the material and moral harm caused by the counterparty's failure to perform, with the judgment ordered immediately enforceable.</p></div></div>
@@ -993,7 +1060,7 @@
     </div>
   </section>
   <section class="clients">
-    <div class="section-lead" style="margin-bottom: 3rem;">
+    <div class="section-lead" style="margin-bottom: 2rem;">
       <div>
         <p class="eyebrow">Trusted across industries</p>
         <h2 class="serif">Clients.</h2>
@@ -1018,7 +1085,7 @@
   <div class="intro-block">
     <p class="serif">Updates and short notes on Qatari judgments and legal developments, written for clients who prefer clarity over commentary.</p>
   </div>
-  <section class="section">
+  <section class="section" style="padding-top: 1rem;">
     <div class="insights-grid">
       <article class="insight" onclick="go('insight-cassation-jurisdiction')"><div class="thumb" style="background-image: url('images/insight_msheireb_tower.jpg');"></div><div class="meta">April 19, 2026 · Real Estate</div><h3 class="serif">When Does the Real Estate Development Committee Have Jurisdiction? A Recent Cassation Ruling</h3><p>A recent decision of the Court of Cassation (Appeal No. 253/2026) draws a clear line between the specialised Real Estate Development Committee and the ordinary commercial courts.</p></article>
       <article class="insight" onclick="go('insight-actual-tenant')"><div class="thumb" style="background-image: url('images/insight_mina_district.jpg');"></div><div class="meta">April 18, 2026 · Real Estate</div><h3 class="serif">Recovery from the Actual Tenant</h3><p>A final Civil Court of First Instance decision confirms that a tenant who signs a lease on behalf of another party may recover amounts paid to the landlord from the actual beneficiary.</p></article>
@@ -1030,16 +1097,19 @@
 
 <!-- TEAM -->
 <div class="page" id="page-team">
-  <div class="page-header-plain">
-    <div class="page-header-inner">
-      <p class="eyebrow">Our People</p>
-      <h1 class="serif">Team</h1>
+  <div class="page-banner-split">
+    <div class="split-copy">
+      <div class="split-copy-inner">
+        <p class="eyebrow">Our People</p>
+        <h1 class="serif">Team</h1>
+      </div>
     </div>
+    <div class="split-image" style="background-image: url('images/office_conference_view.jpg');"></div>
   </div>
   <div class="intro-block">
     <p class="serif">A focused team with senior attention on every matter.</p>
   </div>
-  <section class="section" style="padding-top: 2rem;">
+  <section class="section" style="padding-top: 1rem;">
     <div class="team-grid">
       <div class="team-card" onclick="go('team-mohammed')"><div class="photo" style="background-image: url('images/portrait_mohammed.jpg');"></div><h3 class="serif">Mohammed Al Obaidan</h3><div class="role">Managing Partner</div></div>
       <div class="team-card" onclick="go('team-tarek')"><div class="photo" style="background-image: url('images/portrait_tarek.jpg');"></div><h3 class="serif">Tarek Al-Masri</h3><div class="role">Senior Legal Associate</div></div>
@@ -1109,7 +1179,8 @@
       <div>
         <h1 class="serif">Mohammed Yousef</h1>
         <div class="role">Counsel</div>
-        <p class="bio">Egyptian counsel with more than 15 years of experience in Qatar, specializing in insurance, banking, and trading disputes. Previously General Counsel at one of Qatar's largest trading companies. Graduated from Ain Shams University.</p>
+        <p class="bio">Egyptian counsel with more than 15 years of experience in Qatar, specializing in insurance, banking, and trading disputes. Previously General Counsel at one of Qatar's largest trading companies. Graduated from Ain Shams University and admitted to the Egyptian Bar Association in 2008.</p>
+        <div class="email-row"><a href="mailto:mohammedyosuef@obaidanlaw.com">mohammedyosuef@obaidanlaw.com</a></div>
       </div>
     </div>
   </div>
@@ -1117,21 +1188,27 @@
 
 <!-- CONTACT -->
 <div class="page" id="page-contact">
-  <div class="page-banner" style="background-image: url('images/contact_banner.jpg');">
-    <div class="page-banner-inner">
-      <p class="eyebrow">Get in touch</p>
-      <h1 class="serif">Contact</h1>
+  <div class="page-banner-split">
+    <div class="split-copy">
+      <div class="split-copy-inner">
+        <p class="eyebrow">Get in touch</p>
+        <h1 class="serif">Contact</h1>
+      </div>
     </div>
+    <div class="split-image" style="background-image: url('images/contact_banner.jpg');"></div>
   </div>
   <div class="contact-grid">
     <div class="contact-form">
       <h2 class="serif">Send a message</h2>
-      <div class="field"><label>Full name</label><input type="text" placeholder="Your full name" /></div>
-      <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
-      <div class="field"><label>Phone (optional)</label><input type="tel" placeholder="+974" /></div>
-      <div class="field"><label>How can we help?</label><textarea placeholder="A brief description of your matter."></textarea></div>
-      <button class="btn btn-dark" type="button">Send message <span class="arrow">→</span></button>
-      <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem;">Please do not include confidential information until a formal engagement is confirmed.</p>
+      <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+        <div class="field"><label for="cf-name">Full name</label><input id="cf-name" type="text" name="name" placeholder="Your full name" required /></div>
+        <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" placeholder="you@example.com" required /></div>
+        <div class="field"><label for="cf-phone">Phone (optional)</label><input id="cf-phone" type="tel" name="phone" placeholder="+974" /></div>
+        <div class="field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" placeholder="A brief description of your matter." required></textarea></div>
+        <input type="hidden" name="_subject" value="New message from obaidanlaw.com" />
+        <button class="btn btn-dark" type="submit">Send message <span class="arrow">→</span></button>
+        <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem;">Please do not include confidential information until a formal engagement is confirmed.</p>
+      </form>
     </div>
     <aside class="contact-info">
       <div class="info-block"><h4>Office</h4><p>Burj AlFardan, 17th Floor<br>Lusail, Qatar</p></div>
@@ -1301,7 +1378,7 @@
     <div class="footer-top">
       <div>
         <img class="footer-logo" src="images/logo_white.png" alt="Al Obaidan Law Firm" />
-        <p class="footer-tagline">A Qatari boutique practice for corporate, real estate, and commercial matters. QFC and mainland. Arabic and English.</p>
+        <p class="footer-tagline">A Qatari practice for corporate, real estate, and commercial matters. QFC and mainland. Arabic and English.</p>
       </div>
       <div class="footer-col"><h4>Firm</h4><a onclick="go('about')">About</a><a onclick="go('expertise')">Expertise</a><a onclick="go('team')">Team</a></div>
       <div class="footer-col"><h4>Work</h4><a onclick="go('portfolio')">Experience</a><a onclick="go('insights')">Insights</a><a onclick="go('contact')">Contact</a></div>
