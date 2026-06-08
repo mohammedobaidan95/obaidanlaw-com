@@ -158,7 +158,7 @@
      ====================================================================== */
   .hero {
     position: relative;
-    height: 92vh; min-height: 680px;
+    height: 85vh; min-height: 600px;
     overflow: hidden;
     background: #000;
   }
@@ -207,6 +207,7 @@
     line-height: 1.65; color: rgba(255,255,255,0.72);
     margin-bottom: 2.5rem;
   }
+
   .btn {
     display: inline-flex; align-items: center; gap: 0.75rem;
     padding: 1rem 1.75rem;
@@ -669,6 +670,40 @@
   }
   .client:hover img { opacity: 1; }
 
+  /* Clients — auto-scrolling logo marquee */
+  .logo-marquee {
+    position: relative; overflow: hidden; margin-top: 3rem;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 1.75rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  }
+  .logo-track {
+    display: flex; width: max-content;
+    animation: logoscroll 50s linear infinite;
+  }
+  .logo-marquee:hover .logo-track { animation-play-state: paused; }
+  .logo-item {
+    flex: 0 0 auto; width: 190px; height: 80px;
+    display: flex; align-items: center; justify-content: center; padding: 0 1.75rem;
+  }
+  .logo-item img {
+    max-width: 100%; max-height: 54px; width: auto; height: auto;
+    object-fit: contain; opacity: 0.85; transition: opacity 0.3s;
+  }
+  .logo-item:hover img { opacity: 1; }
+  @keyframes logoscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
+  @media (max-width: 600px) { .logo-item { width: 150px; height: 64px; padding: 0 1.25rem; } }
+
+  /* Homepage slim trust bar */
+  .client-strip { max-width: 1600px; margin: 0 auto; padding: 3.5rem 2rem 0.5rem; }
+  .client-strip .cap {
+    text-align: center; font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); font-weight: 400;
+  }
+  .client-strip .logo-marquee { margin-top: 1.75rem; }
+
   /* Expertise page */
   .expertise-list { border-top: 1px solid var(--border); margin-top: 0; }
   .expertise-row {
@@ -808,12 +843,46 @@
   <section class="hero">
     <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
     <div class="hero-inner">
-      <p class="hero-eyebrow">Established Counsel · Doha</p>
-      <h1 class="serif">A Qatari law firm for corporate, real estate, and commercial matters.</h1>
-      <p class="subhead serif">Precision in counsel. Clarity in drafting. Resolve in advocacy.</p>
-      <p class="lead">A Qatari practice providing structured legal advice to businesses, institutions, and individuals across QFC and mainland jurisdictions, in Arabic and English.</p>
+      <p class="hero-eyebrow">Corporate · Real Estate · Disputes</p>
+      <h1 class="serif">Trusted counsel, grounded in Qatari practice.</h1>
       <div>
         <a class="btn" onclick="go('contact')">Book consultation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="client-strip">
+    <p class="cap">Trusted by leading Qatari &amp; international organizations</p>
+    <div class="logo-marquee" aria-label="Clients we have advised">
+      <div class="logo-track">
+        <div class="logo-item"><img src="images/fakhroo-holding.png" alt="Fakhroo Holding"></div>
+        <div class="logo-item"><img src="images/doha-bank.png" alt="Doha Bank"></div>
+        <div class="logo-item"><img src="images/newton-schools.jpg" alt="Newton Group"></div>
+        <div class="logo-item"><img src="images/arkpath.jpg" alt="ArcPath Partners"></div>
+        <div class="logo-item"><img src="images/maroon-construction.png" alt="Maroon Construction"></div>
+        <div class="logo-item"><img src="images/aaig-holding.png" alt="AAIG"></div>
+        <div class="logo-item"><img src="images/laiwyer.jpg" alt="Laiwyer"></div>
+        <div class="logo-item"><img src="images/autohome.png" alt="Autohome"></div>
+        <div class="logo-item"><img src="images/al-yousuf.png" alt="Al Yousuf Trading"></div>
+        <div class="logo-item"><img src="images/nomad.png" alt="Nomad"></div>
+        <div class="logo-item"><img src="images/gulf-house.png" alt="Gulf House Wholesaler"></div>
+        <div class="logo-item"><img src="images/bjj-school.jpg" alt="Brazilian Jiu Jitsu School"></div>
+        <div class="logo-item"><img src="images/bluerock.svg" alt="Bluerock"></div>
+        <div class="logo-item"><img src="images/malaa3b.png" alt="Malaa3b"></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/fakhroo-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/doha-bank.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/newton-schools.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/arkpath.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/maroon-construction.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/aaig-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/laiwyer.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/autohome.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/al-yousuf.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/nomad.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/gulf-house.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/bjj-school.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/bluerock.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/malaa3b.png" alt=""></div>
       </div>
     </div>
   </section>
@@ -1074,10 +1143,37 @@
         <h2 class="serif">Clients.</h2>
       </div>
     </div>
-    <div class="clients-grid">
-      <div class="client"><img src="images/fakhroo-holding.png" alt="Fakhroo Holding"></div><div class="client"><img src="images/doha-bank.png" alt="Doha Bank"></div><div class="client"><img src="images/newton-schools.jpg" alt="Newton Group"></div><div class="client"><img src="images/arkpath.jpg" alt="ArcPath Partners"></div><div class="client"><img src="images/maroon-construction.png" alt="Maroon Construction"></div>
-      <div class="client"><img src="images/aaig-holding.png" alt="AAIG"></div><div class="client"><img src="images/laiwyer.jpg" alt="Laiwyer"></div><div class="client"><img src="images/autohome.png" alt="Autohome"></div><div class="client"><img src="images/al-yousuf.png" alt="Al Yousuf Trading"></div><div class="client"><img src="images/nomad.png" alt="Nomad"></div>
-      <div class="client"><img src="images/gulf-house.png" alt="Gulf House Wholesaler"></div><div class="client"><img src="images/bjj-school.jpg" alt="Brazilian Jiu Jitsu School"></div><div class="client"><img src="images/bluerock.svg" alt="Bluerock"></div><div class="client"><img src="images/malaa3b.png" alt="Malaa3b"></div>
+    <div class="logo-marquee" aria-label="Clients we have advised">
+      <div class="logo-track">
+        <div class="logo-item"><img src="images/fakhroo-holding.png" alt="Fakhroo Holding"></div>
+        <div class="logo-item"><img src="images/doha-bank.png" alt="Doha Bank"></div>
+        <div class="logo-item"><img src="images/newton-schools.jpg" alt="Newton Group"></div>
+        <div class="logo-item"><img src="images/arkpath.jpg" alt="ArcPath Partners"></div>
+        <div class="logo-item"><img src="images/maroon-construction.png" alt="Maroon Construction"></div>
+        <div class="logo-item"><img src="images/aaig-holding.png" alt="AAIG"></div>
+        <div class="logo-item"><img src="images/laiwyer.jpg" alt="Laiwyer"></div>
+        <div class="logo-item"><img src="images/autohome.png" alt="Autohome"></div>
+        <div class="logo-item"><img src="images/al-yousuf.png" alt="Al Yousuf Trading"></div>
+        <div class="logo-item"><img src="images/nomad.png" alt="Nomad"></div>
+        <div class="logo-item"><img src="images/gulf-house.png" alt="Gulf House Wholesaler"></div>
+        <div class="logo-item"><img src="images/bjj-school.jpg" alt="Brazilian Jiu Jitsu School"></div>
+        <div class="logo-item"><img src="images/bluerock.svg" alt="Bluerock"></div>
+        <div class="logo-item"><img src="images/malaa3b.png" alt="Malaa3b"></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/fakhroo-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/doha-bank.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/newton-schools.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/arkpath.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/maroon-construction.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/aaig-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/laiwyer.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/autohome.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/al-yousuf.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/nomad.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/gulf-house.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/bjj-school.jpg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/bluerock.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/malaa3b.png" alt=""></div>
+      </div>
     </div>
   </section>
 </div>
@@ -1209,19 +1305,22 @@
   <div class="contact-grid">
     <div class="contact-form">
       <h2 class="serif">Send a message</h2>
-      <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+      <form action="https://formsubmit.co/info@obaidanlaw.com" method="POST">
         <div class="field"><label for="cf-name">Full name</label><input id="cf-name" type="text" name="name" placeholder="Your full name" required /></div>
         <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" placeholder="you@example.com" required /></div>
         <div class="field"><label for="cf-phone">Phone (optional)</label><input id="cf-phone" type="tel" name="phone" placeholder="+974" /></div>
         <div class="field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" placeholder="A brief description of your matter." required></textarea></div>
         <input type="hidden" name="_subject" value="New message from obaidanlaw.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://obaidanlaw.com/#contact" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <button class="btn btn-dark" type="submit">Send message <span class="arrow">→</span></button>
         <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem;">Please do not include confidential information until a formal engagement is confirmed.</p>
       </form>
     </div>
     <aside class="contact-info">
       <div class="info-block"><h4>Office</h4><p>Burj AlFardan, 17th Floor<br>Lusail, Qatar</p></div>
-      <div class="info-block"><h4>Phone</h4><p><a href="tel:+97477444401">+974 7744 4401</a></p></div>
+      <div class="info-block"><h4>Phone</h4><p><a href="tel:+97477144440">+974 7714 4440</a></p></div>
       <div class="info-block"><h4>Email</h4><p><a href="mailto:info@obaidanlaw.com">info@obaidanlaw.com</a></p></div>
       <div class="info-block"><h4>Hours</h4><p>Sunday – Thursday<br>08:00 – 17:00 (GMT+3)</p></div>
     </aside>
@@ -1429,7 +1528,7 @@
       </div>
       <div class="footer-col"><h4>Firm</h4><a onclick="go('about')">About</a><a onclick="go('expertise')">Expertise</a><a onclick="go('team')">Team</a></div>
       <div class="footer-col"><h4>Work</h4><a onclick="go('portfolio')">Experience</a><a onclick="go('insights')">Insights</a><a onclick="go('contact')">Contact</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="tel:+97477444401">+974 7744 4401</a><a href="mailto:info@obaidanlaw.com">info@obaidanlaw.com</a><p>Burj AlFardan, 17th Floor<br>Lusail, Qatar</p></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+97477144440">+974 7714 4440</a><a href="mailto:info@obaidanlaw.com">info@obaidanlaw.com</a><p>Burj AlFardan, 17th Floor<br>Lusail, Qatar</p></div>
     </div>
     <div class="footer-bottom">
       <div>© 2026 Al Obaidan Law Firm. All rights reserved.</div>
@@ -1439,19 +1538,43 @@
 </footer>
 
 <script>
-  function go(id) {
+  // Render a page without touching history (used by go(), popstate, and initial load)
+  function renderPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + id);
+    let target = document.getElementById('page-' + id);
+    if (!target) { id = 'home'; target = document.getElementById('page-home'); }
     if (target) target.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'auto' });
-    document.getElementById('nav').classList.remove('open');
-    // Update active nav item
+    const navEl = document.getElementById('nav');
+    if (navEl) navEl.classList.remove('open');
     document.querySelectorAll('nav.main a[data-page]').forEach(a => {
-      a.classList.toggle('active', a.dataset.page === id || (id.startsWith('team') && a.dataset.page === 'team'));
+      a.classList.toggle('active',
+        a.dataset.page === id ||
+        (id.indexOf('team') === 0 && a.dataset.page === 'team') ||
+        (id.indexOf('insight') === 0 && a.dataset.page === 'insights'));
     });
+    return id;
   }
-  // Set initial active state
-  document.querySelector('nav.main a[data-page="home"]').classList.add('active');
+
+  // Navigate and push a real history entry so the browser Back button works in-site
+  function go(id) {
+    const shown = renderPage(id);
+    if (history.state && history.state.page === shown) return;
+    history.pushState({ page: shown }, '', '#' + shown);
+  }
+
+  // Back/forward buttons replay history within the site instead of leaving it
+  window.addEventListener('popstate', function (e) {
+    const id = (e.state && e.state.page) || (location.hash ? location.hash.slice(1) : 'home');
+    renderPage(id);
+  });
+
+  // On load (or refresh), honour the hash so deep links land on the right page
+  (function () {
+    const initial = location.hash ? location.hash.slice(1) : 'home';
+    const shown = renderPage(initial);
+    history.replaceState({ page: shown }, '', '#' + shown);
+  })();
 </script>
 </body>
 </html>
