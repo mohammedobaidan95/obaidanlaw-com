@@ -684,17 +684,17 @@
   }
   .logo-marquee:hover .logo-track { animation-play-state: paused; }
   .logo-item {
-    flex: 0 0 auto; width: 190px; height: 80px;
-    display: flex; align-items: center; justify-content: center; padding: 0 1.75rem;
+    flex: 0 0 auto; height: 80px;
+    display: flex; align-items: center; justify-content: center; padding: 0 1.25rem;
   }
   .logo-item img {
-    max-width: 100%; max-height: 54px; width: auto; height: auto;
+    height: 62px; width: auto;
     object-fit: contain; opacity: 0.85; transition: opacity 0.3s;
   }
   .logo-item:hover img { opacity: 1; }
   @keyframes logoscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
-  @media (max-width: 600px) { .logo-item { width: 150px; height: 64px; padding: 0 1.25rem; } }
+  @media (max-width: 600px) { .logo-item { padding: 0 0.9rem; } .logo-item img { height: 50px; } }
 
   /* Homepage slim trust bar */
   .client-strip { max-width: 1600px; margin: 0 auto; padding: 3.5rem 2rem 0.5rem; }
@@ -855,34 +855,38 @@
     <p class="cap">Trusted by leading Qatari &amp; international organizations</p>
     <div class="logo-marquee" aria-label="Clients we have advised">
       <div class="logo-track">
-        <div class="logo-item"><img src="images/fakhroo-holding.png" alt="Fakhroo Holding"></div>
-        <div class="logo-item"><img src="images/doha-bank.png" alt="Doha Bank"></div>
-        <div class="logo-item"><img src="images/newton-schools.jpg" alt="Newton Group"></div>
-        <div class="logo-item"><img src="images/arkpath.jpg" alt="ArcPath Partners"></div>
-        <div class="logo-item"><img src="images/maroon-construction.png" alt="Maroon Construction"></div>
-        <div class="logo-item"><img src="images/aaig-holding.png" alt="AAIG"></div>
-        <div class="logo-item"><img src="images/laiwyer.jpg" alt="Laiwyer"></div>
-        <div class="logo-item"><img src="images/autohome.png" alt="Autohome"></div>
-        <div class="logo-item"><img src="images/al-yousuf.png" alt="Al Yousuf Trading"></div>
-        <div class="logo-item"><img src="images/nomad.png" alt="Nomad"></div>
-        <div class="logo-item"><img src="images/gulf-house.png" alt="Gulf House Wholesaler"></div>
-        <div class="logo-item"><img src="images/bjj-school.jpg" alt="Brazilian Jiu Jitsu School"></div>
-        <div class="logo-item"><img src="images/bluerock.svg" alt="Bluerock"></div>
-        <div class="logo-item"><img src="images/malaa3b.png" alt="Malaa3b"></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/fakhroo-holding.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/doha-bank.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/newton-schools.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/arkpath.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/maroon-construction.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/aaig-holding.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/laiwyer.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/autohome.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/al-yousuf.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/nomad.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/gulf-house.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/bjj-school.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/bluerock.svg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/malaa3b.png" alt=""></div>
+        <div class="logo-item"><img src="images/logos/fakhroo-holding.png" alt="Fakhroo Holding"></div>
+        <div class="logo-item"><img src="images/logos/doha-bank.png" alt="Doha Bank"></div>
+        <div class="logo-item"><img src="images/logos/newton-schools.png" alt="Newton Group"></div>
+        <div class="logo-item"><img src="images/logos/arkpath.png" alt="ArcPath Partners"></div>
+        <div class="logo-item"><img src="images/logos/maroon-construction.png" alt="Maroon Construction"></div>
+        <div class="logo-item"><img src="images/logos/aaig-holding.png" alt="AAIG"></div>
+        <div class="logo-item"><img src="images/logos/laiwyer.png" alt="Laiwyer"></div>
+        <div class="logo-item"><img src="images/logos/autohome.png" alt="Autohome"></div>
+        <div class="logo-item"><img src="images/logos/al-yousuf.png" alt="Al Yousuf Trading"></div>
+        <div class="logo-item"><img src="images/logos/nomad.png" alt="Nomad"></div>
+        <div class="logo-item"><img src="images/logos/gulf-house.png" alt="Gulf House Wholesaler"></div>
+        <div class="logo-item"><img src="images/logos/bjj-school.png" alt="Brazilian Jiu Jitsu School"></div>
+        <div class="logo-item"><img src="images/logos/bluerock.svg" alt="Bluerock"></div>
+        <div class="logo-item"><img src="images/logos/malaa3b.png" alt="Malaa3b"></div>
+        <div class="logo-item"><img src="images/logos/shovan-trading.png" alt="Shovan Trading Company"></div>
+        <div class="logo-item"><img src="images/logos/growa.png" alt="GROWA"></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/fakhroo-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/doha-bank.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/newton-schools.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/arkpath.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/maroon-construction.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/aaig-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/laiwyer.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/autohome.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/al-yousuf.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/nomad.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/gulf-house.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/bjj-school.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/bluerock.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/malaa3b.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/shovan-trading.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/growa.png" alt=""></div>
       </div>
     </div>
   </section>
@@ -1145,34 +1149,38 @@
     </div>
     <div class="logo-marquee" aria-label="Clients we have advised">
       <div class="logo-track">
-        <div class="logo-item"><img src="images/fakhroo-holding.png" alt="Fakhroo Holding"></div>
-        <div class="logo-item"><img src="images/doha-bank.png" alt="Doha Bank"></div>
-        <div class="logo-item"><img src="images/newton-schools.jpg" alt="Newton Group"></div>
-        <div class="logo-item"><img src="images/arkpath.jpg" alt="ArcPath Partners"></div>
-        <div class="logo-item"><img src="images/maroon-construction.png" alt="Maroon Construction"></div>
-        <div class="logo-item"><img src="images/aaig-holding.png" alt="AAIG"></div>
-        <div class="logo-item"><img src="images/laiwyer.jpg" alt="Laiwyer"></div>
-        <div class="logo-item"><img src="images/autohome.png" alt="Autohome"></div>
-        <div class="logo-item"><img src="images/al-yousuf.png" alt="Al Yousuf Trading"></div>
-        <div class="logo-item"><img src="images/nomad.png" alt="Nomad"></div>
-        <div class="logo-item"><img src="images/gulf-house.png" alt="Gulf House Wholesaler"></div>
-        <div class="logo-item"><img src="images/bjj-school.jpg" alt="Brazilian Jiu Jitsu School"></div>
-        <div class="logo-item"><img src="images/bluerock.svg" alt="Bluerock"></div>
-        <div class="logo-item"><img src="images/malaa3b.png" alt="Malaa3b"></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/fakhroo-holding.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/doha-bank.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/newton-schools.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/arkpath.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/maroon-construction.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/aaig-holding.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/laiwyer.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/autohome.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/al-yousuf.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/nomad.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/gulf-house.png" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/bjj-school.jpg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/bluerock.svg" alt=""></div>
-        <div class="logo-item" aria-hidden="true"><img src="images/malaa3b.png" alt=""></div>
+        <div class="logo-item"><img src="images/logos/fakhroo-holding.png" alt="Fakhroo Holding"></div>
+        <div class="logo-item"><img src="images/logos/doha-bank.png" alt="Doha Bank"></div>
+        <div class="logo-item"><img src="images/logos/newton-schools.png" alt="Newton Group"></div>
+        <div class="logo-item"><img src="images/logos/arkpath.png" alt="ArcPath Partners"></div>
+        <div class="logo-item"><img src="images/logos/maroon-construction.png" alt="Maroon Construction"></div>
+        <div class="logo-item"><img src="images/logos/aaig-holding.png" alt="AAIG"></div>
+        <div class="logo-item"><img src="images/logos/laiwyer.png" alt="Laiwyer"></div>
+        <div class="logo-item"><img src="images/logos/autohome.png" alt="Autohome"></div>
+        <div class="logo-item"><img src="images/logos/al-yousuf.png" alt="Al Yousuf Trading"></div>
+        <div class="logo-item"><img src="images/logos/nomad.png" alt="Nomad"></div>
+        <div class="logo-item"><img src="images/logos/gulf-house.png" alt="Gulf House Wholesaler"></div>
+        <div class="logo-item"><img src="images/logos/bjj-school.png" alt="Brazilian Jiu Jitsu School"></div>
+        <div class="logo-item"><img src="images/logos/bluerock.svg" alt="Bluerock"></div>
+        <div class="logo-item"><img src="images/logos/malaa3b.png" alt="Malaa3b"></div>
+        <div class="logo-item"><img src="images/logos/shovan-trading.png" alt="Shovan Trading Company"></div>
+        <div class="logo-item"><img src="images/logos/growa.png" alt="GROWA"></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/fakhroo-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/doha-bank.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/newton-schools.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/arkpath.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/maroon-construction.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/aaig-holding.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/laiwyer.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/autohome.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/al-yousuf.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/nomad.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/gulf-house.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/bjj-school.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/bluerock.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/malaa3b.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/shovan-trading.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="images/logos/growa.png" alt=""></div>
       </div>
     </div>
   </section>
@@ -1191,6 +1199,7 @@
   </div>
   <section class="section" style="padding-top: 1rem;">
     <div class="insights-grid">
+      <article class="insight" onclick="go('insight-maintenance-final-payment')"><div class="thumb" style="background-image: url('images/architecture_facade_triangles.jpg');"></div><div class="meta">June 7, 2026 · Dispute Resolution</div><h3 class="serif">An Unexpired Maintenance Period Does Not Defer a Contractor's Final Payment</h3><p>A recent Investment and Trade Court decision confirms that a maintenance period does not delay the final payment unless the contract expressly ties the two together.</p></article>
       <article class="insight" onclick="go('insight-offplan-cancellation')"><div class="thumb" style="background-image: url('images/insight_offplan_cancellation.jpg');"></div><div class="meta">June 8, 2026 · Real Estate</div><h3 class="serif">When a Real Estate Developer Won't Honor an Off-Plan Cancellation</h3><p>A recent Investment and Trade Court ruling confirms that a buyer may recover a refund, the return of security cheques, and compensation despite a "final settlement" clause.</p></article>
       <article class="insight" onclick="go('insight-cassation-jurisdiction')"><div class="thumb" style="background-image: url('images/insight_msheireb_tower.jpg');"></div><div class="meta">April 19, 2026 · Real Estate</div><h3 class="serif">When Does the Real Estate Development Committee Have Jurisdiction? A Recent Cassation Ruling</h3><p>A recent decision of the Court of Cassation (Appeal No. 253/2026) draws a clear line between the specialised Real Estate Development Committee and the ordinary commercial courts.</p></article>
       <article class="insight" onclick="go('insight-actual-tenant')"><div class="thumb" style="background-image: url('images/insight_mina_district.jpg');"></div><div class="meta">April 18, 2026 · Real Estate</div><h3 class="serif">Recovery from the Actual Tenant</h3><p>A final Civil Court of First Instance decision confirms that a tenant who signs a lease on behalf of another party may recover amounts paid to the landlord from the actual beneficiary.</p></article>
@@ -1512,6 +1521,47 @@
     <p>For developers: a signature is not the only thing that creates a binding obligation. Drafting an agreement and acting on it can bind you regardless, and failing to perform may expose you to compensation on top of the refund.</p>
 
     <p class="disclaimer"><em>This note sets out general principles drawn from a first-instance judgment and is provided for information only; it does not constitute legal advice. For the related question of which forum has jurisdiction over these disputes, see our note on the <a onclick="go('insight-cassation-jurisdiction')" style="color: inherit; text-decoration: underline; cursor: pointer;">Investment and Trade Court and unlicensed developers</a>.</em></p>
+    <div class="article-footer">
+      <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
+    </div>
+  </article>
+</div>
+
+<!-- INSIGHT ARTICLE: insight-maintenance-final-payment -->
+<div class="page" id="page-insight-maintenance-final-payment">
+  <div class="page-banner" style="background-image: url('images/architecture_facade_triangles.jpg');">
+    <div class="page-banner-inner">
+      <p class="eyebrow">Dispute Resolution · June 7, 2026</p>
+      <h1 class="serif" style="max-width: 22ch;">An Unexpired Maintenance Period Does Not Defer a Contractor's Final Payment</h1>
+    </div>
+  </div>
+  <article class="article-body">
+    <a class="back" onclick="go('insights')">← Back to Insights</a>
+    <p class="article-meta">7 June 2026</p>
+
+    <p>Construction contracts routinely provide for a maintenance or guarantee period after the works are completed, a window during which the contractor remains responsible for remedying defects. A common dispute arises when the employer treats that period as a reason to withhold the final payment: the works are finished and the certificates are issued, but the employer argues that nothing is due until the maintenance period has run. A recent decision of the Investment and Trade Court confirms that this argument fails where the contract does not actually tie the final payment to the maintenance period.</p>
+
+    <h3>The Facts</h3>
+    <p>The contractor entered into a fixed-price contract to build an integrated industrial facility, a factory, an administrative building, and ancillary structures, on a plot in an industrial zone. The works were to be completed within a defined period running from the advance payment or the building permit, with a short additional allowance for handover of the site, and payment was to be made against an agreed schedule.</p>
+    <p>The principal works were carried out. The employer later requested additional electrical works, which were added to the final account, and an expansion of the mezzanine, which the contractor executed without additional charge. The Civil Defence approvals were completed, and the competent municipality issued a building completion certificate confirming the project's readiness and its conformity to the approved drawings.</p>
+    <p>On review of the account, every scheduled payment had been made except the final completion instalment. After agreed deductions, a balance remained due to the contractor. The contractor sent repeated formal letters requesting a date for initial handover and release of the outstanding sum, followed by formal notices. The employer did not pay, and the contractor brought proceedings to recover the balance, together with compensation for the consequences of the delay.</p>
+
+    <h3>The Employer's Defence</h3>
+    <p>The employer resisted on the ground that the claim was premature. It argued that the agreed maintenance period had not yet elapsed, and that the final payment was not due until it had. By counterclaim, the employer sought substantial damages of its own.</p>
+
+    <h3>The Court's Analysis</h3>
+    <p>The Court treated the relationship as governed by a written construction contract with defined terms. Under Article 171 of the Civil Code, the contract is the law of the parties: it may not be revoked or varied except by agreement or on grounds fixed by law. Under Article 211 of the Code of Civil and Commercial Procedure, the creditor bears the burden of proving the obligation and the debtor the burden of proving its discharge.</p>
+    <p>Examining the contract, the Court found that it contained no provision permitting the employer to retain a security sum or to tie the final instalment to the maintenance period. Absent such a clause, the maintenance period had no bearing on when the final payment fell due. The Court further applied Article 693 of the Civil Code, under which work is deemed delivered where the contractor completes it and places it at the employer's disposal, and the employer, having been put on notice, refuses to take delivery without legitimate reason.</p>
+    <p>The Court appointed an engineering expert, whose findings it adopted. The executed works were free of structural or material defects; what remained were minor finishing observations, addressed at or before final delivery. On settlement of the account, a balance was owed to the contractor.</p>
+
+    <h3>The Counterclaim</h3>
+    <p>The employer's counterclaim was dismissed. Having found that the works were completed, free of substantive defect, and properly delivered in law, the Court identified no breach by the contractor on which a claim for damages could rest. It ordered the employer to pay the outstanding balance, rejected the remainder of the contractor's claim, dismissed the counterclaim, and placed the costs of both the original claim and the counterclaim on the employer.</p>
+
+    <h3>Takeaways</h3>
+    <p>Two points emerge for parties to construction contracts in Qatar. First, a maintenance or guarantee period does not, by itself, defer the final payment. Unless the contract expressly conditions the final instalment on the expiry of that period, or creates a retention mechanism, the employer cannot rely on it to withhold payment once the works are complete.</p>
+    <p>Second, the contractor's position is built on the record. Completion certificates, regulatory sign-off, and formal notice of readiness for handover are what convert a finished project into an enforceable right to payment. For employers, the lesson is the mirror image: if retention or staged release against the maintenance period is intended, it must be written into the contract, not asserted after the works are done.</p>
+
+    <p class="disclaimer"><em>This note sets out general principles drawn from a first-instance judgment and is provided for information only; it does not constitute legal advice.</em></p>
     <div class="article-footer">
       <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
     </div>
