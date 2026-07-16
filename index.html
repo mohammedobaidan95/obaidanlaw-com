@@ -12,6 +12,27 @@
   gtag('config', 'G-VGF4SLMSRD');
 </script>
 <title>Al Obaidan Law Firm</title>
+<meta name="description" content="A Qatari law firm for corporate, real estate, and commercial disputes — advising across QFC and mainland Qatar, in Arabic and English. Based in Doha." />
+<link rel="canonical" href="https://obaidanlaw.com/" />
+
+<!-- Open Graph (link previews on WhatsApp, LinkedIn, Facebook, iMessage) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Al Obaidan Law Firm" />
+<meta property="og:title" content="Al Obaidan Law Firm — Corporate · Real Estate · Disputes" />
+<meta property="og:description" content="Trusted counsel, grounded in Qatari practice. Advising businesses, institutions, and individuals across QFC and mainland Qatar, in Arabic and English." />
+<meta property="og:url" content="https://obaidanlaw.com/" />
+<meta property="og:image" content="https://obaidanlaw.com/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Al Obaidan Law Firm, Doha" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ar_QA" />
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Al Obaidan Law Firm — Corporate · Real Estate · Disputes" />
+<meta name="twitter:description" content="Trusted counsel, grounded in Qatari practice. QFC and mainland Qatar, in Arabic and English." />
+<meta name="twitter:image" content="https://obaidanlaw.com/images/og-image.jpg" />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -682,7 +703,11 @@
     display: flex; width: max-content;
     animation: logoscroll 50s linear infinite;
   }
-  .logo-marquee:hover .logo-track { animation-play-state: paused; }
+  /* Pause on hover only on devices with real hover (mouse); on touch,
+     :hover sticks after a tap and freezes the marquee */
+  @media (hover: hover) and (pointer: fine) {
+    .logo-marquee:hover .logo-track { animation-play-state: paused; }
+  }
   .logo-item {
     flex: 0 0 auto; height: 80px;
     display: flex; align-items: center; justify-content: center; padding: 0 1.25rem;
@@ -694,7 +719,11 @@
   .logo-item:hover img { opacity: 1; }
   @keyframes logoscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
-  @media (max-width: 600px) { .logo-item { padding: 0 0.9rem; } .logo-item img { height: 50px; } }
+  @media (max-width: 600px) {
+    .logo-item { padding: 0 0.9rem; }
+    .logo-item img { height: 50px; }
+    .logo-track { animation-duration: 26s; }
+  }
 
   /* Homepage slim trust bar */
   .client-strip { max-width: 1600px; margin: 0 auto; padding: 3.5rem 2rem 0.5rem; }
@@ -1130,6 +1159,7 @@
   </div>
   <section class="section" style="padding-top: 1rem; padding-bottom: 2rem;">
     <div class="matters-list">
+      <div class="matter-row"><div><div class="tag">Real Estate · Dispute</div></div><div><h3 class="serif">Off-Plan Reservation — Rescission and Full Refund</h3><p>Acted for a buyer before the Investment and Trade Court in a dispute over a delayed off-plan residential unit. Obtained rescission of the reservation contract for the developer's failure to complete on time, together with a full refund of the sums paid, the return of the buyer's security cheques, and compensation, with the judgment ordered immediately enforceable.</p></div></div>
       <div class="matter-row"><div><div class="tag">Corporate · QFC</div></div><div><h3 class="serif">QFC Family Holding Company — Articles of Association</h3><p>Advised a Qatari family on bespoke Articles of Association for a QFC-registered investment holding company. Work covered reserved matters drafting, share transfer and pre-emption rights, dispute resolution before the QICDRC, and reconciliation of the AoA with the family's governing charter.</p></div></div>
       <div class="matter-row"><div><div class="tag">Dispute Resolution</div></div><div><h3 class="serif">Investment Dispute — Full Recovery and Damages</h3><p>Represented an investor before the Investment and Trade Court in a claim to rescind an investment agreement in a commercial venture. Obtained a final judgment ordering full refund of the client's invested capital together with compensation for the material and moral harm caused by the counterparty's failure to perform, with the judgment ordered immediately enforceable.</p></div></div>
       <div class="matter-row"><div><div class="tag">Corporate · JV</div></div><div><h3 class="serif">Joint Venture Agreement — QFC and Mainland Structure</h3><p>Advised the mainland Qatari party on a bilateral joint venture with a QFC-registered counterparty in the outdoor advertising sector. Reviewed and negotiated amendments covering governance, reserved matters, payment mechanics, non-compete asymmetries, exit rights, and the jurisdictional interface between QFC and mainland courts.</p></div></div>
@@ -1199,6 +1229,7 @@
   </div>
   <section class="section" style="padding-top: 1rem;">
     <div class="insights-grid">
+      <article class="insight" onclick="go('insight-offplan-late-completion')"><div class="thumb" style="background-image: url('images/insight_msheireb_street.jpg');"></div><div class="meta">July 12, 2026 · Real Estate</div><h3 class="serif">Off-Plan Property Delays in Qatar: Cancelling the Contract and Getting Your Money Back</h3><p>The completion date passed and the unit still was not ready. A recent Investment and Trade Court decision shows how an off-plan buyer in Qatar can cancel the contract, get a full refund, and who to sue when the developer is late.</p></article>
       <article class="insight" onclick="go('insight-maintenance-final-payment')"><div class="thumb" style="background-image: url('images/architecture_facade_triangles.jpg');"></div><div class="meta">June 7, 2026 · Dispute Resolution</div><h3 class="serif">An Unexpired Maintenance Period Does Not Defer a Contractor's Final Payment</h3><p>A recent Investment and Trade Court decision confirms that a maintenance period does not delay the final payment unless the contract expressly ties the two together.</p></article>
       <article class="insight" onclick="go('insight-offplan-cancellation')"><div class="thumb" style="background-image: url('images/insight_offplan_cancellation.jpg');"></div><div class="meta">June 8, 2026 · Real Estate</div><h3 class="serif">When a Real Estate Developer Won't Honor an Off-Plan Cancellation</h3><p>A recent Investment and Trade Court ruling confirms that a buyer may recover a refund, the return of security cheques, and compensation despite a "final settlement" clause.</p></article>
       <article class="insight" onclick="go('insight-cassation-jurisdiction')"><div class="thumb" style="background-image: url('images/insight_msheireb_tower.jpg');"></div><div class="meta">April 19, 2026 · Real Estate</div><h3 class="serif">When Does the Real Estate Development Committee Have Jurisdiction? A Recent Cassation Ruling</h3><p>A recent decision of the Court of Cassation (Appeal No. 253/2026) draws a clear line between the specialised Real Estate Development Committee and the ordinary commercial courts.</p></article>
@@ -1560,6 +1591,54 @@
     <h3>Takeaways</h3>
     <p>Two points emerge for parties to construction contracts in Qatar. First, a maintenance or guarantee period does not, by itself, defer the final payment. Unless the contract expressly conditions the final instalment on the expiry of that period, or creates a retention mechanism, the employer cannot rely on it to withhold payment once the works are complete.</p>
     <p>Second, the contractor's position is built on the record. Completion certificates, regulatory sign-off, and formal notice of readiness for handover are what convert a finished project into an enforceable right to payment. For employers, the lesson is the mirror image: if retention or staged release against the maintenance period is intended, it must be written into the contract, not asserted after the works are done.</p>
+
+    <p class="disclaimer"><em>This note sets out general principles drawn from a first-instance judgment and is provided for information only; it does not constitute legal advice.</em></p>
+    <div class="article-footer">
+      <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
+    </div>
+  </article>
+</div>
+
+<!-- INSIGHT ARTICLE: insight-offplan-late-completion -->
+<div class="page" id="page-insight-offplan-late-completion">
+  <div class="page-banner" style="background-image: url('images/insight_msheireb_street.jpg');">
+    <div class="page-banner-inner">
+      <p class="eyebrow">Real Estate · July 12, 2026</p>
+      <h1 class="serif" style="max-width: 24ch;">Off-Plan Property Delays in Qatar: Cancelling the Contract and Getting Your Money Back</h1>
+    </div>
+  </div>
+  <article class="article-body">
+    <a class="back" onclick="go('insights')">← Back to Insights</a>
+    <p class="article-meta">12 July 2026</p>
+
+    <p>Buying an off-plan property in Qatar means paying for a home before it is built and trusting the developer to finish it on time. When the completion date comes and goes and the unit is still not ready, buyers ask the same questions: can I cancel the contract, and can I get my money back? A recent decision of the Investment and Trade Court answers both questions with a yes. It also shows one mistake that can sink an otherwise strong claim: suing the wrong company.</p>
+
+    <h3>What happened</h3>
+    <p>A buyer reserved an off-plan home in a mixed-use project from a real estate developer. The price was payable in instalments, the contract set an expected completion date, and the buyer handed over a set of post-dated cheques as security and paid a large part of the price.</p>
+    <p>The completion date passed, and even the extended deadline was almost up, but the unit was still not finished. A court-appointed engineer inspected the building and reported that it was not ready: the electricity and water were not properly connected, the air conditioning was not running, the building was still empty, and finishing it would take several more months and depend on further permits. The buyer went to court to cancel the contract, get a refund, have the security cheques returned, and claim compensation.</p>
+
+    <h3>Can you cancel an off-plan contract in Qatar if the developer is late?</h3>
+    <p>Yes. A contract binds both sides equally (Article 171 of the Civil Code). If one side does not do its part, the other can ask the court to cancel the contract and claim compensation (Article 183). Relying on the engineer's report that the home was not finished and could not be handed over, the Court found that the developer had broken the contract and cancelled it.</p>
+    <p>The Court rejected the developer's two excuses. The first was that "finishing" the unit is different from "handing it over"; the Court held this made no difference, because a home cannot be handed over before it is finished. The second was that the pandemic had caused the delay; the Court rejected this too, because the contract was signed after the pandemic's disruption had passed, so the developer had accepted the deadline knowing that.</p>
+
+    <h3>Can you get your money back from the developer?</h3>
+    <p>Yes. When a contract is cancelled, both sides are returned to the position they were in before it was signed (Article 185). The Court ordered the developer to refund the full amount the buyer had paid toward the price.</p>
+    <p>The Court also ordered the developer to return the buyer's security cheques, or to pay their value if they had already been cashed, because those cheques were security for the price and separate from the money already paid.</p>
+
+    <h3>Can you claim compensation as well as a refund?</h3>
+    <p>Yes, and the buyer here did. A refund only returns the money that was paid; it does not answer for the harm caused by the delay itself. The Court awarded compensation on top of the refund for two kinds of loss: the financial loss of having money tied up and being unable to use or invest in the home, and the personal distress of being kept out of a property the buyer had paid for. Under the Civil Code (Articles 256 and 201), a developer who fails to perform is liable for the loss that failure causes, and the court decides a fair amount of compensation based on the circumstances of the case.</p>
+
+    <h3>Make sure you sue the right party</h3>
+    <p>One practical point is worth keeping in mind. In these projects, the company that signs the reservation contract is not always the same as the developer that owns the project; a related company may sign on the developer's behalf. Under the Civil Code, a contract signed by an agent binds the party it acts for, so a claim generally belongs against the developer that owns the project rather than a company that merely signed on its behalf. Getting this right from the outset avoids part of the claim being dismissed and having to start over against the correct party.</p>
+
+    <h3>What off-plan buyers in Qatar should take away</h3>
+    <p>If a developer fails to finish and hand over a unit on time, that is a valid reason to cancel the contract and recover the money paid. General excuses about past events will not help a developer who agreed to the deadline afterwards. Make sure the claim is brought against the developer that owns the project, not the company that signed on its behalf. And keep everything that proves the payments and the delay: receipts, the cheques, and any formal notices sent to the developer.</p>
+
+    <div style="margin-top:2.5rem; padding:1.6rem 1.75rem; background:var(--bg-alt); border-left:3px solid var(--fg);">
+      <h3 style="margin-top:0; margin-bottom:0.6rem;">Dealing with a delayed off-plan property?</h3>
+      <p style="margin-bottom:1.25rem;">If a developer has missed the completion date or has not honoured your contract, Al Obaidan Law Firm advises buyers and investors on off-plan and real estate disputes across Qatar.</p>
+      <a class="btn btn-dark" onclick="go('contact')">Contact the firm about your case <span class="arrow">→</span></a>
+    </div>
 
     <p class="disclaimer"><em>This note sets out general principles drawn from a first-instance judgment and is provided for information only; it does not constitute legal advice.</em></p>
     <div class="article-footer">
