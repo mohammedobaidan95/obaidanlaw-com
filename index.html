@@ -1685,17 +1685,32 @@
     return id;
   }
 
+  // Report each in-site navigation to GA4 as its own pageview, so articles
+  // and pages show up individually in Analytics (the initial load is
+  // already counted automatically by the GA4 snippet).
+  function trackPage(id) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        page_title: id,
+        page_location: location.origin + '/#' + id,
+        page_path: '/' + id
+      });
+    }
+  }
+
   // Navigate and push a real history entry so the browser Back button works in-site
   function go(id) {
     const shown = renderPage(id);
     if (history.state && history.state.page === shown) return;
     history.pushState({ page: shown }, '', '#' + shown);
+    trackPage(shown);
   }
 
   // Back/forward buttons replay history within the site instead of leaving it
   window.addEventListener('popstate', function (e) {
     const id = (e.state && e.state.page) || (location.hash ? location.hash.slice(1) : 'home');
-    renderPage(id);
+    const shown = renderPage(id);
+    trackPage(shown);
   });
 
   // On load (or refresh), honour the hash so deep links land on the right page
