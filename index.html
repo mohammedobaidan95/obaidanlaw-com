@@ -733,6 +733,47 @@
   }
   .client-strip .logo-marquee { margin-top: 1.75rem; }
 
+
+
+  .psec { margin-top: 2.75rem; }
+  .psec-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+  .psec-lead { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.1rem; }
+  .psec .matter-para { font-size: 0.94rem; line-height: 1.75; margin-bottom: 1rem; }
+  .contact-row { margin-top: 0.35rem; }
+
+  .team-detail .contact-block { margin: 1.2rem 0 1.9rem; }
+  .team-detail .email-row.contact-row { margin-top: 0.35rem; padding-top: 0; border-top: 0; }
+
+
+  .contact-label { display: inline-block; min-width: 1.5rem; font-weight: 700; font-size: 0.85rem; }
+
+  .team-detail .bio-title { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.7rem; }
+
+
+  .contact-row a { font-size: 0.9rem; }
+
+  /* ---- Lawyer profile accordion & service areas ---- */
+  .profile-sections { margin-top: 2.5rem; border-bottom: 1px solid var(--border); }
+  .acc-item { border-top: 1px solid var(--border); }
+  .acc-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.35rem 0; cursor: pointer;
+  }
+  .acc-title { font-size: 1.02rem; font-weight: 600; margin: 0; }
+  .acc-icon { font-size: 1.35rem; color: var(--muted); line-height: 1; user-select: none; }
+  .acc-body { display: none; padding: 0 0 1.5rem; }
+  .acc-item.open .acc-body { display: block; }
+  .acc-body p { font-size: 0.94rem; line-height: 1.75; margin-bottom: 0.9rem; color: var(--fg); }
+  .acc-body ul { margin: 0; padding-inline-start: 1.1rem; }
+  .acc-body li { font-size: 0.94rem; line-height: 1.75; margin-bottom: 0.85rem; }
+  .service-areas { margin-top: 2rem; }
+  .service-areas .acc-title { display: block; margin-bottom: 1.1rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .chip {
+    border: 1px solid var(--rule); padding: 0.5rem 0.95rem;
+    font-size: 0.84rem; border-radius: 3px; color: var(--fg);
+  }
+
   /* Expertise page */
   .expertise-list { border-top: 1px solid var(--border); margin-top: 0; }
   .expertise-row {
@@ -856,7 +897,7 @@
         <li><a data-page="contact" onclick="go('contact')">Contact</a></li>
       </ul>
       <div class="nav-aside">
-        <a class="lang">العربية</a>
+        <a class="lang" onclick="switchLanguage('ar.html')" style="cursor:pointer;">العربية</a>
         <span class="search-icon" title="Search">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         </span>
@@ -925,7 +966,7 @@
     <div class="split-text">
       <p class="eyebrow">The Firm</p>
       <h2 class="serif">A practice built on Qatari ground.</h2>
-      <p>Al Obaidan Law Firm is a practice founded in Doha. Our work is grounded in Qatari commercial practice and shaped by a decade of in-house counsel experience with a Qatari state entity.</p>
+      <p>Al Obaidan Law Firm is a practice founded in Doha. Our work is grounded in Qatari commercial practice.</p>
       <p>Every engagement is led by senior lawyers who take ownership of outcomes. We draft with clarity, advocate with discipline, and protect our clients' interests with care.</p>
       <a class="link" onclick="go('about')">Our approach <span>→</span></a>
     </div>
@@ -1083,7 +1124,7 @@
     <div class="split-image" style="background-image: url('images/office_bench_painting.jpg');"></div>
   </div>
   <div class="intro-block">
-    <p class="serif">Al Obaidan Law Firm is a practice founded in Doha, grounded in Qatari commercial life and shaped by a decade of in-house counsel experience at a Qatari state entity.</p>
+    <p class="serif">Al Obaidan Law Firm is a practice founded in Doha, grounded in Qatari commercial life.</p>
   </div>
   <section class="section">
     <div class="section-lead">
@@ -1135,7 +1176,7 @@
   </div>
   <section class="section" style="padding-top: 2rem;">
     <div class="expertise-list">
-      <div class="expertise-row"><div class="num">00-1</div><h3 class="serif">Litigation &amp; Dispute Resolution</h3><p>Civil, commercial, labor, and administrative litigation across all court levels. Representation before the Investment and Trade Court, the Court of Cassation, and the QFC Tribunals.</p></div>
+      <div class="expertise-row"><div class="num">00-1</div><h3 class="serif">Litigation &amp; Dispute Resolution</h3><p>Civil, commercial, labor, and administrative litigation across all court levels. Representation before the Investment and Trade Court, the Court of Cassation, and the QFC Tribunals. This includes disputes with real estate developers over delayed or undelivered off-plan property — <a onclick="go('developer-disputes')" style="text-decoration:underline; cursor:pointer;">filing a case against a developer</a>.</p></div>
       <div class="expertise-row"><div class="num">00-2</div><h3 class="serif">Corporate &amp; Commercial Law</h3><p>Drafting, reviewing, and negotiating commercial contracts. Joint venture and shareholder agreements. Company formation and restructuring on mainland and QFC.</p></div>
       <div class="expertise-row"><div class="num">00-3</div><h3 class="serif">Inheritance &amp; Estate Distribution</h3><p>Shari'a-compliant estate distribution (قسمة شرعية), including calculation of heir shares, reconciliation with court determinations, and resolution of differences between heirs. Succession planning for complex estates.</p></div>
       <div class="expertise-row"><div class="num">00-4</div><h3 class="serif">Employment Law</h3><p>Employment contract drafting, wrongful termination cases, disciplinary actions, and government and semi-government employment matters.</p></div>
@@ -1271,9 +1312,10 @@
       <div class="photo" style="background-image: url('images/portrait_mohammed.jpg');"></div>
       <div>
         <h1 class="serif">Mohammed Al Obaidan</h1>
-        <div class="role">Managing Partner</div>
-        <p class="bio">A Qatari lawyer with experience at QatarEnergy and Al Tamimi &amp; Company. Mohammed focuses on corporate, administrative, and employment law, with deep litigation experience before civil and investment courts.</p>
-        <div class="email-row"><a href="mailto:mohammed@obaidanlaw.com">mohammed@obaidanlaw.com</a></div>
+        <div class="role">Managing Partner</div><div class="contact-block"><div class="email-row contact-row"><span class="contact-label">T</span><a href="tel:+97477144440">+974 7714 4440</a></div><div class="email-row contact-row"><span class="contact-label">E</span><a href="mailto:mohammed@obaidanlaw.com">mohammed@obaidanlaw.com</a></div></div>
+        <h3 class="psec-title bio-title">Biography</h3><p class="bio">Mohammed Al Obaidan is the managing partner of Al Obaidan Law Firm. He advises companies, institutions, and families on corporate, administrative, and employment matters, and has deep litigation experience before the civil courts and the Investment and Trade Court. He previously practised at QatarEnergy and Al Tamimi &amp; Company.</p>
+        
+<div class="psec"><h3 class="psec-title">Experience</h3><p class="psec-lead">Representative matters include:</p><p class="matter-para">Advised a Qatari family on the restructuring of a family holding company in the Qatar Financial Centre, including bespoke articles of association aligned with the family’s governance charter.</p><p class="matter-para">Acted for a Qatari individual in recovering sums paid under a commercial lease he had signed as nominal tenant, establishing the actual tenant company’s liability on the strength of its written acknowledgment.</p></div><div class="profile-sections"><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Bars and Courts</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>State of Qatar — admitted before the Qatari courts.</p></div></div><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Education</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>LLB, University of Reading, United Kingdom.</p></div></div><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Spoken Languages</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>Arabic</p><p>English</p></div></div></div><div class="service-areas"><h4 class="acc-title">Service areas</h4><div class="chips"><span class="chip">Corporate &amp; Commercial</span><span class="chip">Litigation &amp; Disputes</span><span class="chip">Real Estate</span><span class="chip">Employment</span><span class="chip">QFC</span></div></div>
       </div>
     </div>
   </div>
@@ -1286,16 +1328,10 @@
       <div class="photo" style="background-image: url('images/portrait_tarek.jpg');"></div>
       <div>
         <h1 class="serif">Tarek Al-Masri</h1>
-        <div class="role">Senior Legal Associate</div>
-        <p class="bio">Lebanese Bar Association-registered lawyer and graduate of Lebanese University with experience in civil, commercial, and labor matters. Previously worked at Al Sharq Law Firm.</p>
-        <h4>Representative Matters</h4>
-        <ul>
-          <li>Representing an individual in civil proceedings against a trading company for the recovery of rental arrears paid on his behalf as the nominal tenant under a commercial lease.</li>
-          <li>Representing an investor in Investment and Trade Court proceedings to rescind an investment agreement in a food and beverage venture and to recover the investment together with damages.</li>
-          <li>Representing a wholesale supplier in Investment and Trade Court proceedings against a retail operator for the recovery of unpaid commercial invoices and damages for delayed payment.</li>
-          <li>Drafting wills for private clients in accordance with Qatari law.</li>
-        </ul>
-        <div class="email-row"><a href="mailto:talmasri@obaidanlaw.com">talmasri@obaidanlaw.com</a></div>
+        <div class="role">Senior Legal Associate</div><div class="contact-block"><div class="email-row contact-row"><span class="contact-label">T</span><a href="tel:+97433604499">+974 3360 4499</a></div><div class="email-row contact-row"><span class="contact-label">E</span><a href="mailto:talmasri@obaidanlaw.com">talmasri@obaidanlaw.com</a></div></div>
+        <h3 class="psec-title bio-title">Biography</h3><p class="bio">Tarek Al-Masri is a senior legal associate in the firm’s dispute resolution practice. He acts for companies and individuals in civil, commercial, and employment litigation before the Qatari courts, including the Investment and Trade Court, with particular experience in construction and real estate disputes, investment claims, and debt recovery. He previously practised at Al Sharq Law Firm.</p>
+        
+<div class="psec"><h3 class="psec-title">Experience</h3><p class="psec-lead">Representative matters include:</p><p class="matter-para">Acted for the contractor before the Investment and Trade Court in recovering the final payment on an industrial construction contract, defeating both the employer’s defence that an unexpired maintenance period deferred payment and its counterclaim in full.</p><p class="matter-para">Obtained rescission of an off-plan reservation against a real estate developer for failure to complete on time, with a full refund of the price paid, the return of the buyer’s security cheques, and compensation — the judgment declared immediately enforceable.</p><p class="matter-para">Represented investors before the Investment and Trade Court in rescinding investment agreements where the counterparty failed to perform, recovering the invested capital in full together with damages.</p><p class="matter-para">Represented an individual in civil proceedings against a trading company for the recovery of rental arrears paid on his behalf as the nominal tenant under a commercial lease.</p><p class="matter-para">Represented a wholesale supplier in Investment and Trade Court proceedings against a retail operator for the recovery of unpaid commercial invoices and damages for delayed payment.</p><p class="matter-para">Drafting wills for private clients in accordance with Qatari law.</p></div><div class="profile-sections"><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Bars and Courts</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>Lebanese Bar Association — Lebanon.</p></div></div><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Education</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>LLM, Lebanese University.</p><p>LLB, Lebanese University.</p></div></div><div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)"><h4 class="acc-title">Spoken Languages</h4><span class="acc-icon">+</span></div><div class="acc-body"><p>Arabic</p><p>English</p><p>French</p></div></div></div><div class="service-areas"><h4 class="acc-title">Service areas</h4><div class="chips"><span class="chip">Litigation &amp; Disputes</span><span class="chip">Construction Disputes</span><span class="chip">Real Estate Disputes</span><span class="chip">Debt Recovery</span><span class="chip">Private Client &amp; Wills</span></div></div>
       </div>
     </div>
   </div>
@@ -1637,13 +1673,52 @@
     <div style="margin-top:2.5rem; padding:1.6rem 1.75rem; background:var(--bg-alt); border-left:3px solid var(--fg);">
       <h3 style="margin-top:0; margin-bottom:0.6rem;">Dealing with a delayed off-plan property?</h3>
       <p style="margin-bottom:1.25rem;">If a developer has missed the completion date or has not honoured your contract, Al Obaidan Law Firm advises buyers and investors on off-plan and real estate disputes across Qatar.</p>
-      <a class="btn btn-dark" onclick="go('contact')">Contact the firm about your case <span class="arrow">→</span></a>
+      <a class="btn btn-dark" onclick="go('developer-disputes')">Filing a case against a developer <span class="arrow">→</span></a>
+      <a class="btn btn-dark" style="margin-left:0.75rem;" onclick="go('contact')">Contact the firm</a>
     </div>
 
     <p class="disclaimer"><em>This note sets out general principles drawn from a first-instance judgment and is provided for information only; it does not constitute legal advice.</em></p>
     <div class="article-footer">
       <a class="btn btn-dark" onclick="go('insights')">All insights <span class="arrow">→</span></a>
     </div>
+  </article>
+</div>
+
+<!-- SERVICE PAGE: real estate developer disputes -->
+<div class="page" id="page-developer-disputes">
+  <div class="page-banner" style="background-image: url('images/insight_msheireb_street.jpg');">
+    <div class="page-banner-inner">
+      <p class="eyebrow">Real Estate · Dispute Resolution</p>
+      <h1 class="serif" style="max-width: 24ch;">Filing a Case Against a Real Estate Developer in Qatar</h1>
+    </div>
+  </div>
+  <article class="article-body">
+
+    <p>If you bought a property off-plan in Qatar and the developer has missed the completion date, stopped responding, or refuses to return your money, you are not without options. Qatari law gives buyers clear remedies, and the courts have applied them. Al Obaidan Law Firm acts for buyers and investors in disputes with real estate developers, from the first legal notice through to judgment and enforcement.</p>
+
+    <h3>Situations we handle</h3>
+    <p>Buyers usually come to us with one of a familiar set of problems: a unit that was never completed or handed over on time; a developer that will not honour a cancellation or refund; instalments paid for a project that has stalled; security cheques still held by a developer after the contract has broken down; a refusal to return a deposit; or a developer relying on a settlement or waiver clause to resist repayment. We also advise on disputes over unit specifications, delayed title transfer, and service-charge and handover conditions.</p>
+
+    <h3>What you can claim</h3>
+    <p>Where a developer has failed to perform, the remedies available to a buyer generally include cancellation of the contract, a refund of the sums paid toward the price, the return of security cheques or their value if they have been cashed, and compensation for the loss caused by the delay. Qatari courts have granted each of these. Which combination applies depends on your contract and the facts, and that assessment is the first thing we do.</p>
+
+    <h3>How the process works</h3>
+    <p>We start by reviewing your contract, payment records, and correspondence to establish where the developer has fallen short. In most cases the next step is a formal legal notice, which sometimes resolves matters without proceedings. If it does not, we file before the competent forum, which for these disputes is usually the Investment and Trade Court, and press the claim through expert examination to judgment and, where needed, enforcement against the developer's assets.</p>
+
+    <h3>Why buyers instruct us</h3>
+    <p>Real estate and commercial disputes are a core part of our practice, not a sideline. We appear regularly before the Investment and Trade Court, we have obtained cancellation, full refunds, return of security cheques, and compensation for buyers in off-plan disputes, and we work in Arabic and English across both QFC and mainland jurisdictions. Just as important, we tell clients honestly at the outset how strong a claim is and what it is likely to involve, rather than encouraging litigation that will not repay the effort.</p>
+
+    <h3>What to bring to a first meeting</h3>
+    <p>The more of the file we can see, the faster we can advise. Useful documents include the reservation or sale contract and any addenda, proof of every payment made, copies of any cheques given to the developer, the project completion or handover schedule, and any correspondence with the developer about the delay. If you do not have all of it, bring what you have.</p>
+
+    <div style="margin-top:2.5rem; padding:1.6rem 1.75rem; background:var(--bg-alt); border-left:3px solid var(--fg);">
+      <h3 style="margin-top:0; margin-bottom:0.6rem;">Speak to us about your case</h3>
+      <p style="margin-bottom:1.25rem;">Tell us what happened with your property and we will advise on where you stand and what can be recovered.</p>
+      <a class="btn btn-dark" onclick="go('contact')">Contact the firm <span class="arrow">→</span></a>
+      <a class="btn btn-dark" style="margin-left:0.75rem;" href="tel:+97477144440">Call +974 7714 4440</a>
+    </div>
+
+    <p class="disclaimer"><em>This page is general information about the firm's services and does not constitute legal advice on any particular matter.</em></p>
   </article>
 </div>
 
@@ -1683,6 +1758,21 @@
         (id.indexOf('insight') === 0 && a.dataset.page === 'insights'));
     });
     return id;
+  }
+
+
+  // Profile accordion toggle (team detail pages)
+  function toggleAcc(head) {
+    var item = head.parentElement;
+    item.classList.toggle('open');
+    var icon = head.querySelector('.acc-icon');
+    if (icon) icon.textContent = item.classList.contains('open') ? '\u2212' : '+';
+  }
+
+  // Switch between the English and Arabic versions, keeping the current page
+  function switchLanguage(file) {
+    const hash = window.location.hash || '#home';
+    window.location.href = file + hash;
   }
 
   // Report each in-site navigation to GA4 as its own pageview, so articles
